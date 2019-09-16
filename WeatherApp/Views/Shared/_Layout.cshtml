@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
+    <link href="~/Content/CustomCSS.css" rel="stylesheet" />
+</head>
+<body class="wallpaper" onload="initGeolocation();">
+
+    <div class="d-flex flex-column h-100">
+        <div id="main" class="container col-10">
+            <div class="row">
+                <div id="title" class="col text-center">
+                    Weather App
+                </div>
+            </div>
+            <div class="row location" id="location">Kernersville, NC</div>
+            <div class="row">
+                <div id="current" class="col">
+                    <div class="row">
+                        <div class="col-sm-7 bottoms text-center">
+                            @*<div class="row col d-md-inline-block" id="dayTime">Monday, 12:00PM</div>*@
+                            <div class="row col d-md-inline-block" id="currentTemp">90&deg;</div>
+                            <div class="row col d-md-inline-block text" id="summary">Mostly Sunny</div>
+                            <div class="row col d-md-inline-block text" id="wind">Wind 14mph</div>
+                            <div class="row col d-md-inline-block text" id="humidity">Humidity 95%</div>
+                            <div class="row col d-md-inline-block text" id="percipitation">Percipitation 20%</div>
+                        </div>
+                        <div class="col-sm-5 removePad">
+                            <img id="weatherIcon" class="img-fluid" src="~/Images/Partly Cloudy.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="weeklyForecast">
+
+            </div>
+            <div class="row">
+                <div id="footer" class="col text-center">
+                    <div class="row">
+                        <div class="col text2">
+                            <font color="white"><a href="https://darksky.net/dev" target="_blank" style="color:yellow">Using Dark Sky</a></font>
+                        </div>
+                        @*<div class="col">
+                            <a>William Robertson</a>
+                        </div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @RenderBody()
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    @*<script src="~/Scripts/jquery-3.3.1.slim.min.js"></script>*@
+    @*<script src="~/Scripts/popper.min.js"></script>*@
+    @*<script src="~/scripts/bootstrap.min.js"></script>*@
+    <script src="~/Scripts/CustomScripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+</html>
